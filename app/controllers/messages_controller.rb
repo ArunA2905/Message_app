@@ -15,8 +15,8 @@ class MessagesController < ApplicationController
    end
 
    def create 
-      #binding.pry
       @messages = Message.new(message_params)
+      @messages.user = User.first
         if @messages.save
             flash[:notice] = "Message was created successfully."
             redirect_to messages_path
