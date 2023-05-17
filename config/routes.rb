@@ -3,6 +3,5 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'about', to: 'pages#about'
   resources :messages
-  get "signup", to: 'sessions#new'
-  resources :users, except: [:new]
+  resources :users
 end
