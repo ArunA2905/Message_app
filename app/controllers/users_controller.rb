@@ -30,6 +30,7 @@ class UsersController < ApplicationController
 
     def create 
         @user = User.new(user_params)
+        
         if @user.save
             flash[:notice] = "Welcome to the Alphog Blog #{@user.username}, you have successfully signed up"
             redirect_to articles_path
